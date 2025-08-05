@@ -7,7 +7,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
@@ -15,7 +14,8 @@ import java.util.Random;
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-    private final Map<String, String> otpStore = new HashMap<>();
+
+    private final OtpService otpService;
 
     private final EmailService emailService;
 
@@ -26,7 +26,7 @@ public class AuthService {
     private String generateOtpAndSendEmail(String email) {
         // Generate random 6 digit otp
         String otp = generateOtp();
-        otpStore.put(email, otp);
+        otpService.storeOtp(email, otp,5);
         emailService.sendOtpEmail(email, otp);
 
         return "OTP sent to email";
@@ -50,6 +50,8 @@ public class AuthService {
     public String resendOtp(String email) {
         Optional<User> userOptional = userRepository.findByEmail(email);
 
+        otpService.deleteOtp(email);
+
         if (userOptional.isEmpty()) {
             return loginOrCreateUser(email);
         }
@@ -64,14 +66,14 @@ public class AuthService {
             throw new IllegalArgumentException("User not found for email: " + email);
         }
 
-        String correctOtp = otpStore.get(email);
+        String correctOtp = otpService.getOtp(email);
         if (correctOtp == null || !correctOtp.equals(otp)) {
             throw new IllegalArgumentException("Invalid OTP");
         }
         User user = userOptional.get();
         user.setEmailVerified(true);
         userRepository.save(user);
-        otpStore.remove(email);
+        otpService.deleteOtp(email);
 
         String accessToken = jwtUtil.generateAccessToken(user.getEmail(), Map.of());
         String refreshToken = jwtUtil.generateRefreshToken(user.getEmail());

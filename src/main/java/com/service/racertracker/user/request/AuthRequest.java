@@ -1,4 +1,4 @@
-package com.service.racertracker.dto.request;
+package com.service.racertracker.user.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

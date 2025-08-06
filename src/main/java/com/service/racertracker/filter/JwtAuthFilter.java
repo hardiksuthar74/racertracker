@@ -1,6 +1,6 @@
 package com.service.racertracker.filter;
 
-import com.service.racertracker.utils.JwtUtil;
+import com.service.racertracker.core.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

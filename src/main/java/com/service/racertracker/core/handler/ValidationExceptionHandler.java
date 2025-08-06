@@ -1,4 +1,4 @@
-package com.service.racertracker.handler;
+package com.service.racertracker.core.handler;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

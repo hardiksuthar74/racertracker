@@ -1,7 +1,7 @@
-package com.service.racertracker.db.model;
+package com.service.racertracker.user.model;
 
 
-import com.service.racertracker.db.mixins.TimestampMixin;
+import com.service.racertracker.core.db.mixins.TimestampMixin;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

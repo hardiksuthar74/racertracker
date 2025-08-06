@@ -1,4 +1,4 @@
-package com.service.racertracker.service;
+package com.service.racertracker.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;

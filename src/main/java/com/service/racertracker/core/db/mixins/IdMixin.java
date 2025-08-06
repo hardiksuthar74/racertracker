@@ -1,4 +1,4 @@
-package com.service.racertracker.db.mixins;
+package com.service.racertracker.core.db.mixins;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

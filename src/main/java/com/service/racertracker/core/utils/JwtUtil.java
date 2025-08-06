@@ -1,4 +1,4 @@
-package com.service.racertracker.utils;
+package com.service.racertracker.core.utils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

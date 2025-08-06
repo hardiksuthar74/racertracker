@@ -1,6 +1,6 @@
-package com.service.racertracker.repository;
+package com.service.racertracker.user.repository;
 
-import com.service.racertracker.db.model.User;
+import com.service.racertracker.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,9 +1,9 @@
-package com.service.racertracker.controller.v1;
+package com.service.racertracker.user.controller.v1;
 
 
-import com.service.racertracker.dto.request.AuthRequest;
-import com.service.racertracker.dto.request.OtpRequest;
-import com.service.racertracker.service.AuthService;
+import com.service.racertracker.user.request.AuthRequest;
+import com.service.racertracker.user.request.OtpRequest;
+import com.service.racertracker.user.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

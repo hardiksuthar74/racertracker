@@ -1,8 +1,8 @@
-package com.service.racertracker.service;
+package com.service.racertracker.user.service;
 
-import com.service.racertracker.db.model.User;
-import com.service.racertracker.repository.UserRepository;
-import com.service.racertracker.utils.JwtUtil;
+import com.service.racertracker.user.model.User;
+import com.service.racertracker.user.repository.UserRepository;
+import com.service.racertracker.core.utils.JwtUtil;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
